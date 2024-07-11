@@ -1,6 +1,12 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from "typeorm";
 
-@Entity({name:'posts'})
+@Entity({ name: "posts" })
 export class PostsEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -13,4 +19,14 @@ export class PostsEntity {
 
   @Column()
   author: string;
+
+  @CreateDateColumn({
+    type: "timestamp",
+  })
+  createdAt!: Date;
+
+  @UpdateDateColumn({
+    type: "timestamp",
+  })
+  updatedAt!: Date;
 }
