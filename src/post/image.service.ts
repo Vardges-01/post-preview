@@ -1,18 +1,13 @@
 import { Injectable } from "@nestjs/common";
 import { createCanvas } from "canvas";
 import { PostService } from "./post.service";
-import { PostNotFoundException } from "../exteptions/post-not-found.exception";
 
 @Injectable()
 export class ImageService {
   constructor(private readonly postService: PostService) {}
 
   async generatePreviewImage(id: number): Promise<Buffer> {
-    const post = await this.postService.getPostById(id);
-
-    if (!post) {
-      throw new PostNotFoundException();
-    }
+    const post = await this.postService.getOneById(id);
 
     const canvas = createCanvas(600, 300);
     const ctx = canvas.getContext("2d");

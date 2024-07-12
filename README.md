@@ -24,12 +24,13 @@ cd post-preview
 
 # 3. Create Environment variables file.
 cp .env.example .env
-
+```
 
 ## Installation
 
 ```bash
 $ npm install
+
 ```
 
 ### Configuration
@@ -48,13 +49,10 @@ Some helper script to work with database
 
 ```bash
 # To create new migration file
-yarn migration:create migration_name
-
-# Truncate full database (note: it isn't deleting the database)
-yarn schema:drop
+npm migration:create migration_name
 
 # Generate migration from update of entities
-yarn migration:generate migration_name
+npm migration:generate migration_name
 ```
 
 ## Running the app

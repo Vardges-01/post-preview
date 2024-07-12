@@ -1,9 +1,9 @@
 import { Injectable } from "@nestjs/common";
-import { ImageService } from "./image.service";
 import { CreatePostDto } from "./dtos/create.dto";
 import { Repository } from "typeorm";
 import { PostsEntity } from "./post.entity";
 import { InjectRepository } from "@nestjs/typeorm";
+import { PostNotFoundException } from "exteptions/post-not-found.exception";
 
 @Injectable()
 export class PostService {
@@ -22,6 +22,10 @@ export class PostService {
   }
 
   async getOneById(id: number): Promise<PostsEntity> {
-    return this.postRepository.findOneBy({ id });
+    const post = await this.postRepository.findOneBy({ id });
+    if (!post) {
+      throw new PostNotFoundException(`Post with id ${id} not found`);
+    }
+    return post;
   }
 }
