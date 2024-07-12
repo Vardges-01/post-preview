@@ -45,6 +45,10 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## API Documentation
+
+The API documentation is available via Swagger. To view the documentation, navigate to http://localhost:3000/documentation in your browser.
+
 ## Support
 
 ----
