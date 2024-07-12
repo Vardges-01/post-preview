@@ -12,16 +12,16 @@ export class PostService {
     private postRepository: Repository<PostsEntity>,
   ) {}
 
-  async createPost(data: CreatePostDto) {
+  async create(data: CreatePostDto) {
     const post = this.postRepository.create(data);
     return this.postRepository.save(post);
   }
 
-  async getPosts(): Promise<PostsEntity[]> {
+  async getAll(): Promise<PostsEntity[]> {
     return this.postRepository.find();
   }
 
-  async getPostById(id: number): Promise<PostsEntity> {
+  async getOneById(id: number): Promise<PostsEntity> {
     return this.postRepository.findOneBy({ id });
   }
 }

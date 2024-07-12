@@ -31,7 +31,7 @@ export class PostController {
   })
   @ApiOperation({ summary: "Get a list of posts." })
   async getPosts() {
-    return await this.postService.getPosts();
+    return await this.postService.getAll();
   }
 
   @Get("preview")
@@ -71,7 +71,7 @@ export class PostController {
   @ApiOperation({ summary: "Create Post" })
   async createPost(@Body() createData: CreatePostDto, @Res() res: Response) {
     try {
-      const postResult = await this.postService.createPost(createData);
+      const postResult = await this.postService.create(createData);
 
       const previewImage = await this.imageService.generatePreviewImage(
         postResult.id,
