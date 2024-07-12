@@ -32,6 +32,31 @@ cp .env.example .env
 $ npm install
 ```
 
+### Configuration
+
+Before start install PostgreSQL and fill correct configurations in `.env` file
+
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
+DB_DATABASE=post-preview
+```
+
+Some helper script to work with database
+
+```bash
+# To create new migration file
+yarn migration:create migration_name
+
+# Truncate full database (note: it isn't deleting the database)
+yarn schema:drop
+
+# Generate migration from update of entities
+yarn migration:generate migration_name
+```
+
 ## Running the app
 
 ```bash
