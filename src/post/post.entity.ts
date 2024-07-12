@@ -11,13 +11,13 @@ export class PostsEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'varchar' })
+  @Column({ type: "varchar" })
   title: string;
 
-  @Column({ type: 'varchar' })
+  @Column({ type: "varchar" })
   content: string;
 
-  @Column({ type: 'varchar' })
+  @Column({ type: "varchar" })
   author: string;
 
   @CreateDateColumn({
