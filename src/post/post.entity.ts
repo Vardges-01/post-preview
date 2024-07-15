@@ -14,7 +14,7 @@ export class PostsEntity {
   @Column({ type: "varchar" })
   title: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar", length: 80 })
   content: string;
 
   @Column({ type: "varchar" })

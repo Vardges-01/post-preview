@@ -71,6 +71,7 @@ export class PostController {
   @ApiOperation({ summary: "Create Post" })
   async createPost(@Body() createData: CreatePostDto, @Res() res: Response) {
     try {
+
       const postResult = await this.postService.create(createData);
 
       const previewImage = await this.imageService.generatePreviewImage(
