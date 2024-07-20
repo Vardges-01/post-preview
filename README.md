@@ -49,10 +49,13 @@ Some helper script to work with database
 
 ```bash
 # To create new migration file
-npm migration:create migration_name
+npm migration:create --name=migration_name
 
 # Generate migration from update of entities
-npm migration:generate migration_name
+npm migration:generate --name=migration_name
+
+# Run created/generated migrations
+npm migration:run
 ```
 
 ## Running the app
