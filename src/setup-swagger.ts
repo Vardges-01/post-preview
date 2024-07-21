@@ -41,5 +41,5 @@ export function setupSwagger(app: INestApplication): void {
     swaggerOptions: {},
   });
 
-  console.info(`Documentation: http://localhost:${process.env.PORT}/api`);
+  console.info(`Documentation: http://localhost:${process.env.PORT}/documentation`);
 }

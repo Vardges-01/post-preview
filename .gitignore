@@ -1,3 +1,5 @@
 node_modules
+init-data.sh
 dist
+
 .env
