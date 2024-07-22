@@ -71,6 +71,30 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Docker
+
+If you are familiar with [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose) then you can run built in docker-compose file, which will install and configure database for you.
+
+### Docker installation
+
+Download docker from Official website
+
+- Mac <https://docs.docker.com/docker-for-mac/install/>
+- Windows <https://docs.docker.com/docker-for-windows/install/>
+- Ubuntu <https://docs.docker.com/install/linux/docker-ce/ubuntu/>
+
+### Docker-compose installation
+
+Download docker from [Official website](https://docs.docker.com/compose/install)
+
+### Run
+
+Open terminal and navigate to project directory and run the following command.
+
+```bash
+docker-compose up
+```
+
 ## API Documentation
 
 The API documentation is available via Swagger. To view the documentation, navigate to http://localhost:3000/documentation in your browser.
